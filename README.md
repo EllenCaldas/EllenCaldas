@@ -63,7 +63,7 @@
 
 ## 🐍 Snake
 <p align="center">
-  <img src="https://github.com/Ellen Caldas/Ellen Caldas/blob/output/github-contribution-grid-snake.svg" alt="snake gif"/>
+  <img src="https://github.com/EllenCaldas/EllenCaldas/blob/output/github-contribution-grid-snake.svg" alt="snake gif"/>
 </p>
 
 
