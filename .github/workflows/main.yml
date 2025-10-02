@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # permite rodar manualmente
 
 permissions:
-  contents: write   # 👈 garante que o Actions pode dar push no repositório
+  contents: write   
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - name: Gerar Snake
         uses: Platane/snk@v3
         with:
-          github_user_name: EllenCaldas   # 👈 seu user do GitHub
+          github_user_name: EllenCaldas   
           outputs: dist/github-contribution-grid-snake.svg
 
       - name: Publicar no branch output
