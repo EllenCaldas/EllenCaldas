@@ -5,6 +5,9 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch: # permite rodar manualmente
 
+permissions:
+  contents: write   # 👈 garante que o Actions pode dar push no repositório
+
 jobs:
   build:
     runs-on: ubuntu-latest
