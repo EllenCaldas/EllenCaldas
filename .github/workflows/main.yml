@@ -1,12 +1,9 @@
 name: Generate Snake
 
 on:
-  schedule:
-    - cron: "0 0 * * *"  # roda todo dia meia-noite
-  workflow_dispatch:
-
-permissions:
-  contents: write
+  schedule: # roda automaticamente todo dia à meia-noite
+    - cron: "0 0 * * *"
+  workflow_dispatch: # permite rodar manualmente
 
 jobs:
   build:
@@ -16,13 +13,14 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Gerar Snake (com privados)
+      - name: Gerar Snake com commits privados
         uses: Platane/snk@v3
         with:
-          github_user_name: EllenCaldas
+          github_user_name: ELLEN2121   # seu usuário do GitHub
+          snake: true                   # mostra a cobrinha percorrendo todos os commits do gráfico
           outputs: dist/github-contribution-grid-snake.svg
         env:
-          GITHUB_TOKEN: ${{ secrets.SNAKE_TOKEN }}   # 👈 usa o seu PAT
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }} # token com acesso a repositórios privados
 
       - name: Publicar no branch output
         uses: crazy-max/ghaction-github-pages@v4
@@ -30,4 +28,4 @@ jobs:
           target_branch: output
           build_dir: dist
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
